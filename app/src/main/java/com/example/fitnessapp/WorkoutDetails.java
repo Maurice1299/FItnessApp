@@ -22,7 +22,7 @@ public class WorkoutDetails extends AppCompatActivity {
     WebView workoutWeb;
     ProgressBar webProgress;
 
-    Intent v1,v2,v5;
+    Intent v1,v3,v6;
     Intent getWorkout;
 
     @Override
@@ -39,8 +39,8 @@ public class WorkoutDetails extends AppCompatActivity {
         webProgress = findViewById(R.id.progressBar);
 
         v1 = new Intent(this, MainActivity.class);
-        v2 = new Intent(this, SelectWorkout.class);
-        v5 = new Intent(this, WorkoutSession.class);
+        v3 = new Intent(this, SelectWorkout.class);
+        v6 = new Intent(this, WorkoutSession.class);
 
         getWorkout = getIntent();
         String workout = getWorkout.getStringExtra("WorkoutType");
@@ -94,16 +94,16 @@ public class WorkoutDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                WorkoutDetails.this.startActivity(v2);
+                WorkoutDetails.this.startActivity(v3);
             }
         });
 
         startWorkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                v5.putExtra("WorkoutType", workout);
+                v6.putExtra("WorkoutType", workout);
 
-                WorkoutDetails.this.startActivity(v5);
+                WorkoutDetails.this.startActivity(v6);
             }
         });
 

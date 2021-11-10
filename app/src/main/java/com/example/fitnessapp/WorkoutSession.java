@@ -21,7 +21,7 @@ public class WorkoutSession extends AppCompatActivity {
 
     CountDownTimer timer;
 
-    Intent v1,v4, v6;
+    Intent v1,v5, v7;
 
     Intent getWorkout;
 
@@ -42,8 +42,8 @@ public class WorkoutSession extends AppCompatActivity {
         startBtn = findViewById(R.id.start);
 
         v1 = new Intent(this, MainActivity.class);
-        v4 = new Intent(this, WorkoutDetails.class);
-        v6 = new Intent(this, Results.class);
+        v5 = new Intent(this, WorkoutDetails.class);
+        v7 = new Intent(this, Results.class);
 
         getWorkout = getIntent();
         String workout = getWorkout.getStringExtra("WorkoutType");
@@ -52,7 +52,8 @@ public class WorkoutSession extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                WorkoutSession.this.startActivity(v4);
+                v5.putExtra("WorkoutType",workout);
+                WorkoutSession.this.startActivity(v5);
 
             }
         });
@@ -69,7 +70,7 @@ public class WorkoutSession extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                WorkoutSession.this.startActivity(v6);
+                WorkoutSession.this.startActivity(v7);
             }
         });
 

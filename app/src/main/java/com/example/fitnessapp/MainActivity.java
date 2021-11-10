@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         startBtn = findViewById(R.id.start);
 
-        v2 = new Intent(this, SelectWorkout.class);
+        v2 = new Intent(this, CreateUser.class);
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override

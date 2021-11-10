@@ -16,7 +16,7 @@ public class SelectWorkout extends AppCompatActivity {
     Button viewPreviousBtn;
     RadioGroup rg;
 
-    Intent v1,v3,v4;
+    Intent v1,v4,v5;
 
     String rbSelected = "Lose Weight";
 
@@ -31,8 +31,8 @@ public class SelectWorkout extends AppCompatActivity {
         rg = findViewById(R.id.rGroup);
 
         v1 = new Intent(this, MainActivity.class);
-        v3 = new Intent(this, PreviousWorkoutResults.class);
-        v4 = new Intent(this, WorkoutDetails.class);
+        v4 = new Intent(this, PreviousWorkoutResults.class);
+        v5 = new Intent(this, WorkoutDetails.class);
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -65,7 +65,7 @@ public class SelectWorkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                SelectWorkout.this.startActivity(v3);
+                SelectWorkout.this.startActivity(v4);
             }
         });
 
@@ -75,7 +75,7 @@ public class SelectWorkout extends AppCompatActivity {
 
                 v4.putExtra("WorkoutType",rbSelected);
 
-                SelectWorkout.this.startActivity(v4);
+                SelectWorkout.this.startActivity(v5);
 
             }
         });
