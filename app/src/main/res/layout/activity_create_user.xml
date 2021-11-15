@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="265dp"
-        android:text="Height:"
+        android:text="Height (in):"
         android:textSize="18sp"/>
 
     <EditText
@@ -76,14 +76,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_below="@id/ageRangeSP"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="335dp"
-        android:text="Weight:"
+        android:text="Weight (kg):"
         android:textSize="18sp"/>
 
     <EditText
@@ -92,7 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_below="@id/heightET"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:inputType="numberDecimal"/>
 
     <Button
         android:layout_width="wrap_content"
