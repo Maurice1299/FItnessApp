@@ -73,7 +73,7 @@ public class SelectWorkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                v4.putExtra("WorkoutType",rbSelected);
+                v5.putExtra("WorkoutType",rbSelected);
 
                 SelectWorkout.this.startActivity(v5);
 

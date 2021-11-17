@@ -33,7 +33,7 @@ public class WorkoutDetails extends AppCompatActivity {
         homeBtn = findViewById(R.id.home);
         goBackBtn = findViewById(R.id.goBack);
         startWorkoutBtn = findViewById(R.id.startWorkout);
-        workoutLabel = findViewById(R.id.workoutType);
+        workoutLabel = findViewById(R.id.workoutTxt);
         description = findViewById(R.id.workoutDesc);
         workoutWeb = findViewById(R.id.workoutVideo);
         webProgress = findViewById(R.id.progressBar);
@@ -54,17 +54,17 @@ public class WorkoutDetails extends AppCompatActivity {
         if (workout.equals("Lose Weight"))
         {
             workoutWeb.loadUrl("https://www.youtube.com/watch?v=H3jJ29oE8Zg");
-            description.setText("Description for Lose Weight");
+            description.setText("In order to lose weight, you need to do the following exercises: forearm plank, sit-ups, knee-high crunches, basic crunches, sit-up and twist, and dorsal raises. You need to do 3 sets of 10 for the sit-ups, knee-high crunches, basic crunches, sit-up and twist, and dorsal raises.");
         }
         else if (workout.equals("Gain Muscle"))
         {
             workoutWeb.loadUrl("https://www.youtube.com/watch?v=L-b45afAZws");
-            description.setText("Description for Gain Muscle");
+            description.setText("In order to gain muscle, you need to do plank walkouts, half burpees, leg raises, plank shoulder taps, kneeling plank, reverse crunches, glute bridges, and offset press ups");
         }
         else if (workout.equals("Build Endurance"))
         {
             workoutWeb.loadUrl("https://www.youtube.com/watch?v=5uVaKjtJHN8");
-            description.setText("Description for Build Endurance");
+            description.setText("In order to build endurance, you need to do eight exercises for 2 rounds. The eight exercises are lateral hops, squat jumps, ventral hops, burpees, lateral jumps, jumping lunges, agility dots, and mountain climbers. For each exercise, you need to do 16 reps. This training regimen doesn't require any equipment.");
         }
 
         workoutWeb.setWebChromeClient(new WebChromeClient()
