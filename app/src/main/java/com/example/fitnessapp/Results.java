@@ -13,13 +13,15 @@ import org.w3c.dom.Text;
 public class Results extends AppCompatActivity {
 
     Button homeBtn;
+    Button selectBtn;
+    Button startBtn;
     TextView totalTime;
     TextView totalCalories;
     TextView BMI;
 
-    Intent v1;
+    Intent v1,v3,v6;
 
-    Intent getUser;
+    Intent getSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,24 +29,30 @@ public class Results extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         homeBtn = findViewById(R.id.home);
+        selectBtn = findViewById(R.id.selectAnotherWorkout);
+        startBtn = findViewById(R.id.startSameWorkout);
         totalTime = findViewById(R.id.totalWorkoutTime);
         totalCalories = findViewById(R.id.totalCaloriesBurned);
         BMI = findViewById(R.id.calculatedBMI);
 
-        getUser = getIntent();
+        v1 = new Intent(Results.this, MainActivity.class);
+        v3 = new Intent(Results.this, SelectWorkout.class);
+        v6 = new Intent(Results.this, WorkoutSession.class);
 
-        String gender = getUser.getStringExtra("PersonGender");
-        String age = getUser.getStringExtra("PersonAge");
-        String height = getUser.getStringExtra("PersonHeight");
-        String weight = getUser.getStringExtra("PersonWeight");
-        int min = getUser.getIntExtra("TotalMin",0);
-        int secs = getUser.getIntExtra("TotalSecs",0);
+        getSession = getIntent();
 
-        totalTime.setText("Total Workout Time: " + min +" minutes and "+ secs + " seconds");
+        String gender = getSession.getStringExtra("PersonGender");
+        String age = getSession.getStringExtra("PersonAge");
+        String height = getSession.getStringExtra("PersonHeight");
+        String weight = getSession.getStringExtra("PersonWeight");
+        int min = getSession.getIntExtra("TotalMin",0);
+        int secs = getSession.getIntExtra("TotalSecs",0);
+
+        totalTime.setText("You worked out for " + min +" minutes and "+ secs + " seconds");
 
         //Calories Burned:
-        //For men: 66 + (6.2 x weight) + (12.7 x height) – (6.76 x age)
-        //For women: 655.1 + (4.35 x weight) + (4.7 x height) – (4.7 x age)
+        //For men: 66 + (6.2 * weight) + (12.7 * height) – (6.76 * age)
+        //For women: 655.1 + (4.35 * weight) + (4.7 * height) – (4.7 * age)
 
         float calories = 0f;
 
@@ -97,7 +105,7 @@ public class Results extends AppCompatActivity {
 
         calories = calories * 1.55f;
 
-        totalCalories.setText("The total amount of calories you burned is "+calories);
+        totalCalories.setText("You burned a total of "+calories+" calories");
 
         //BMI = [weight (lb) / height (in) / height (in)] x 703
 
@@ -109,11 +117,53 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                v1 = new Intent(Results.this, MainActivity.class);
-
                 Results.this.startActivity(v1);
             }
         });
+
+        selectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String name = getSession.getStringExtra("PersonName");
+                String gender = getSession.getStringExtra("PersonGender");
+                String ageRange = getSession.getStringExtra("PersonAge");
+                String height = getSession.getStringExtra("PersonHeight");
+                String weight = getSession.getStringExtra("PersonWeight");
+
+
+                v3.putExtra("PersonName",name);
+                v3.putExtra("PersonGender", gender);
+                v3.putExtra("PersonAge", ageRange);
+                v3.putExtra("PersonHeight",height);
+                v3.putExtra("PersonWeight",weight);
+
+                Results.this.startActivity(v3);
+            }
+        });
+
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String name = getSession.getStringExtra("PersonName");
+                String gender = getSession.getStringExtra("PersonGender");
+                String ageRange = getSession.getStringExtra("PersonAge");
+                String height = getSession.getStringExtra("PersonHeight");
+                String weight = getSession.getStringExtra("PersonWeight");
+
+
+                v6.putExtra("PersonName",name);
+                v6.putExtra("PersonGender", gender);
+                v6.putExtra("PersonAge", ageRange);
+                v6.putExtra("PersonHeight",height);
+                v6.putExtra("PersonWeight",weight);
+
+                Results.this.startActivity(v6);
+            }
+        });
+
+
 
 
 

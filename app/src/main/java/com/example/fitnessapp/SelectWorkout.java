@@ -18,6 +18,8 @@ public class SelectWorkout extends AppCompatActivity {
 
     Intent v1,v4,v5;
 
+    Intent getUser;
+
     String rbSelected = "Lose Weight";
 
     @Override
@@ -74,6 +76,21 @@ public class SelectWorkout extends AppCompatActivity {
             public void onClick(View view) {
 
                 v5.putExtra("WorkoutType",rbSelected);
+
+                getUser = getIntent();
+
+                String name = getUser.getStringExtra("PersonName");
+                String gender = getUser.getStringExtra("PersonGender");
+                String ageRange = getUser.getStringExtra("PersonAge");
+                String height = getUser.getStringExtra("PersonHeight");
+                String weight = getUser.getStringExtra("PersonWeight");
+
+
+                v5.putExtra("PersonName",name);
+                v5.putExtra("PersonGender", gender);
+                v5.putExtra("PersonAge", ageRange);
+                v5.putExtra("PersonHeight",height);
+                v5.putExtra("PersonWeight",weight);
 
                 SelectWorkout.this.startActivity(v5);
 

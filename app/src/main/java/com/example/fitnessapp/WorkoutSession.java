@@ -75,6 +75,19 @@ public class WorkoutSession extends AppCompatActivity {
                 v7.putExtra("TotalMin",totalMinutes);
                 v7.putExtra("TotalSecs",totalSeconds);
 
+                String name = getWorkout.getStringExtra("PersonName");
+                String gender = getWorkout.getStringExtra("PersonGender");
+                String ageRange = getWorkout.getStringExtra("PersonAge");
+                String height = getWorkout.getStringExtra("PersonHeight");
+                String weight = getWorkout.getStringExtra("PersonWeight");
+
+
+                v7.putExtra("PersonName",name);
+                v7.putExtra("PersonGender", gender);
+                v7.putExtra("PersonAge", ageRange);
+                v7.putExtra("PersonHeight",height);
+                v7.putExtra("PersonWeight",weight);
+
                 WorkoutSession.this.startActivity(v7);
             }
         });
@@ -137,6 +150,25 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
+                            int totalMinutes = 40-minutes;
+                            v7.putExtra("TotalMin",totalMinutes);
+                            v7.putExtra("TotalSecs",totalSeconds);
+
+                            String name = getWorkout.getStringExtra("PersonName");
+                            String gender = getWorkout.getStringExtra("PersonGender");
+                            String ageRange = getWorkout.getStringExtra("PersonAge");
+                            String height = getWorkout.getStringExtra("PersonHeight");
+                            String weight = getWorkout.getStringExtra("PersonWeight");
+
+
+                            v7.putExtra("PersonName",name);
+                            v7.putExtra("PersonGender", gender);
+                            v7.putExtra("PersonAge", ageRange);
+                            v7.putExtra("PersonHeight",height);
+                            v7.putExtra("PersonWeight",weight);
+
+                            WorkoutSession.this.startActivity(v7);
+
                         }
                     }.start();
                 }
@@ -181,6 +213,25 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
+                            int totalMinutes = 40-minutes;
+                            v7.putExtra("TotalMin",totalMinutes);
+                            v7.putExtra("TotalSecs",totalSeconds);
+
+                            String name = getWorkout.getStringExtra("PersonName");
+                            String gender = getWorkout.getStringExtra("PersonGender");
+                            String ageRange = getWorkout.getStringExtra("PersonAge");
+                            String height = getWorkout.getStringExtra("PersonHeight");
+                            String weight = getWorkout.getStringExtra("PersonWeight");
+
+
+                            v7.putExtra("PersonName",name);
+                            v7.putExtra("PersonGender", gender);
+                            v7.putExtra("PersonAge", ageRange);
+                            v7.putExtra("PersonHeight",height);
+                            v7.putExtra("PersonWeight",weight);
+
+                            WorkoutSession.this.startActivity(v7);
+
                         }
                     }.start();
                 }
@@ -224,6 +275,25 @@ public class WorkoutSession extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
+
+                            int totalMinutes = 40-minutes;
+                            v7.putExtra("TotalMin",totalMinutes);
+                            v7.putExtra("TotalSecs",totalSeconds);
+
+                            String name = getWorkout.getStringExtra("PersonName");
+                            String gender = getWorkout.getStringExtra("PersonGender");
+                            String ageRange = getWorkout.getStringExtra("PersonAge");
+                            String height = getWorkout.getStringExtra("PersonHeight");
+                            String weight = getWorkout.getStringExtra("PersonWeight");
+
+
+                            v7.putExtra("PersonName",name);
+                            v7.putExtra("PersonGender", gender);
+                            v7.putExtra("PersonAge", ageRange);
+                            v7.putExtra("PersonHeight",height);
+                            v7.putExtra("PersonWeight",weight);
+
+                            WorkoutSession.this.startActivity(v7);
 
                         }
                     }.start();

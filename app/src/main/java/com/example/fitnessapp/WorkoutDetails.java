@@ -103,6 +103,19 @@ public class WorkoutDetails extends AppCompatActivity {
             public void onClick(View view) {
                 v6.putExtra("WorkoutType", workout);
 
+                String name = getWorkout.getStringExtra("PersonName");
+                String gender = getWorkout.getStringExtra("PersonGender");
+                String ageRange = getWorkout.getStringExtra("PersonAge");
+                String height = getWorkout.getStringExtra("PersonHeight");
+                String weight = getWorkout.getStringExtra("PersonWeight");
+
+
+                v6.putExtra("PersonName",name);
+                v6.putExtra("PersonGender", gender);
+                v6.putExtra("PersonAge", ageRange);
+                v6.putExtra("PersonHeight",height);
+                v6.putExtra("PersonWeight",weight);
+
                 WorkoutDetails.this.startActivity(v6);
             }
         });
