@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
+        android:id="@+id/totalWorkoutTime"
         android:text="[Total Workout Time]"
         android:textSize="18sp"/>
 
@@ -37,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
-        android:text="[Amount of Calories Burned]"
+        android:id="@+id/totalCaloriesBurned"
+        android:text="[Total Calories Burned]"
         android:textSize="18sp"/>
 
     <TextView
@@ -45,15 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
+        android:id="@+id/calculatedBMI"
         android:text="[Calculated BMI]"
-        android:textSize="18sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:text="[Benefits Of Doing This Workout]"
         android:textSize="18sp"/>
 
     <Button

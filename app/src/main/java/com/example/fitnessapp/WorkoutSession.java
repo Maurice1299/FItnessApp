@@ -26,7 +26,8 @@ public class WorkoutSession extends AppCompatActivity {
     Intent getWorkout;
 
     int seconds = 60;
-    int minutes;
+    int minutes = 39;
+    int totalSeconds = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,10 @@ public class WorkoutSession extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                int totalMinutes = 40-minutes;
+                v7.putExtra("TotalMin",totalMinutes);
+                v7.putExtra("TotalSecs",totalSeconds);
+
                 WorkoutSession.this.startActivity(v7);
             }
         });
@@ -93,19 +98,18 @@ public class WorkoutSession extends AppCompatActivity {
 
                 if (workout.equals("Lose Weight"))
                 {
-                    time.setText("00:39:00");
-                    minutes = 39;
                     timer = new CountDownTimer(2400000,1000) {
                         @Override
                         public void onTick(long l) {
 
+                            totalSeconds++;
                             seconds--;
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
+                                minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
-                                minutes--;
                                 if (minutes == 0)
                                 {
                                     timer.cancel();
@@ -138,18 +142,18 @@ public class WorkoutSession extends AppCompatActivity {
                 }
                 else if (workout.equals("Gain Muscle"))
                 {
-                    time.setText("00:39:00");
-                    minutes = 39;
                     timer = new CountDownTimer(2400000,1000) {
                         @Override
                         public void onTick(long l) {
 
+                            totalSeconds++;
                             seconds--;
                             if (seconds == 0)
                             {
+                                //issue: timer skips over 0 and doesn't display it.
+                                minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
-                                minutes--;
                                 if (minutes == 0)
                                 {
                                     timer.cancel();
@@ -182,18 +186,18 @@ public class WorkoutSession extends AppCompatActivity {
                 }
                 else if (workout.equals("Build Endurance"))
                 {
-                    time.setText("00:39:00");
-                    minutes = 39;
                     timer = new CountDownTimer(2400000,1000) {
                         @Override
                         public void onTick(long l) {
 
+                            totalSeconds++;
                             seconds--;
                             if (seconds == 0)
                             {
+                                //issue: timer skips over 0 and doesn't display it.
+                                minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
-                                minutes--;
                                 if (minutes == 0)
                                 {
                                     timer.cancel();
