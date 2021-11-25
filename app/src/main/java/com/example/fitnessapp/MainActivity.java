@@ -13,9 +13,6 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static SQLiteDatabase db;
-    DBHelper fDbHelper;
-
     Button startBtn;
     Intent v2;
 
@@ -27,24 +24,6 @@ public class MainActivity extends AppCompatActivity {
         startBtn = findViewById(R.id.start);
 
         v2 = new Intent(this, CreateUser.class);
-
-        fDbHelper = new DBHelper(MainActivity.this);
-        try {
-            fDbHelper.createDataBase();
-
-        } catch (IOException ioe) {
-
-            throw new Error("Unable to create database");
-        }
-
-        try {
-
-            fDbHelper.openDataBase();
-
-        } catch (SQLException sqle) {
-
-        }
-        db = fDbHelper.getWritableDatabase();
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
