@@ -153,7 +153,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         do {
 
             resultsList.add("ID: " + result.getInt(0) + " | " + "Name: " + result.getString(1) + " | " + "Age: " + result.getInt(2) + " | " + "Gender: " + result.getString(3)
-            + " | " + "Weight: " + result.getInt(4) + " | " + "Height: " + result.getInt(5) + " | " + colName + ": " + result.getInt(colNum));
+            + " | " + "Weight: " + result.getInt(4) + " | " + "Height: " + result.getInt(5) + " | " + colName + " Workout Time: " + result.getInt(colNum));
 
         } while (result.moveToNext());
 

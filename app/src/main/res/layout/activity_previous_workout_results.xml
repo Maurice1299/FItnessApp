@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="40dp"
         android:text="Here Are Your Previous Workout Results:"
         android:textSize="24sp"/>
 
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="40dp"
         android:text="Select Workout Type:"
         android:textSize="18sp"/>
 
@@ -36,12 +36,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="220dp"
         android:id="@+id/workoutType"/>
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/workoutType"
         android:layout_marginTop="20dp"
         android:id="@+id/LV"/>
@@ -50,8 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp"
         android:layout_below="@id/LV"
+        android:layout_marginTop="20dp"
         android:id="@+id/goBack"
         android:text="Go Back"
         android:textSize="18sp"/>
