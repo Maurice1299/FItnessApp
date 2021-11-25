@@ -15,37 +15,37 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "/data/data/com.example.fitnessapp/databases/";
     private static String DB_NAME = "Final_ProjDB";
-    private SQLiteDatabase db;
-    private Context myContext;
+    private SQLiteDatabase fitnessDB;
+    private Context DBHelperContext;
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 1);
-        this.myContext = context;
+        this.DBHelperContext = context;
     }
 
     private boolean checkDataBase() {
 
-        SQLiteDatabase checkDB = null;
+        SQLiteDatabase dbCheck = null;
 
         try {
-            String myPath = DB_PATH + DB_NAME;
-            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+            String path = DB_PATH + DB_NAME;
+            dbCheck = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
 
         } catch (SQLiteException e) {
 
         }
-        if (checkDB != null) {
+        if (dbCheck != null) {
 
-            checkDB.close();
+            dbCheck.close();
         }
-        return checkDB != null ? true : false;
+        return dbCheck != null ? true : false;
     }
 
     public void createDataBase() throws IOException {
 
-        boolean dbExist = checkDataBase();
+        boolean dbPresent = checkDataBase();
 
-        if (dbExist) {
+        if (dbPresent) {
 
         } else {
 
@@ -67,16 +67,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void openDataBase() throws SQLException {
 
-        String myPath = DB_PATH + DB_NAME;
-        db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+        String path = DB_PATH + DB_NAME;
+        fitnessDB = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READWRITE);
 
     }
 
     @Override
     public synchronized void close() {
 
-        if (db != null)
-            db.close();
+        if (fitnessDB != null)
+            fitnessDB.close();
 
         super.close();
 
@@ -84,21 +84,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void copyDataBase() throws IOException {
 
-        InputStream myInput = myContext.getAssets().open(DB_NAME + ".db");
+        InputStream iStream = DBHelperContext.getAssets().open(DB_NAME + ".db");
 
-        String outFileName = DB_PATH + DB_NAME;
+        String output = DB_PATH + DB_NAME;
 
-        OutputStream myOutput = new FileOutputStream(outFileName);
+        OutputStream oStream = new FileOutputStream(output);
 
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = myInput.read(buffer)) > 0) {
-            myOutput.write(buffer, 0, length);
+        while ((length = iStream.read(buffer)) > 0) {
+            oStream.write(buffer, 0, length);
         }
 
-        myOutput.flush();
-        myOutput.close();
-        myInput.close();
+        oStream.flush();
+        oStream.close();
+        iStream.close();
 
     }
 

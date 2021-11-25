@@ -41,6 +41,8 @@ public class Results extends AppCompatActivity {
 
         getSession = getIntent();
 
+        String workout = getSession.getStringExtra("WorkoutType");
+        String name = getSession.getStringExtra("PersonName");
         String gender = getSession.getStringExtra("PersonGender");
         String age = getSession.getStringExtra("PersonAge");
         String height = getSession.getStringExtra("PersonHeight");
@@ -125,16 +127,9 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String name = getSession.getStringExtra("PersonName");
-                String gender = getSession.getStringExtra("PersonGender");
-                String ageRange = getSession.getStringExtra("PersonAge");
-                String height = getSession.getStringExtra("PersonHeight");
-                String weight = getSession.getStringExtra("PersonWeight");
-
-
                 v3.putExtra("PersonName",name);
                 v3.putExtra("PersonGender", gender);
-                v3.putExtra("PersonAge", ageRange);
+                v3.putExtra("PersonAge", age);
                 v3.putExtra("PersonHeight",height);
                 v3.putExtra("PersonWeight",weight);
 
@@ -146,16 +141,10 @@ public class Results extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String name = getSession.getStringExtra("PersonName");
-                String gender = getSession.getStringExtra("PersonGender");
-                String ageRange = getSession.getStringExtra("PersonAge");
-                String height = getSession.getStringExtra("PersonHeight");
-                String weight = getSession.getStringExtra("PersonWeight");
-
-
+                v6.putExtra("WorkoutType", workout);
                 v6.putExtra("PersonName",name);
                 v6.putExtra("PersonGender", gender);
-                v6.putExtra("PersonAge", ageRange);
+                v6.putExtra("PersonAge", age);
                 v6.putExtra("PersonHeight",height);
                 v6.putExtra("PersonWeight",weight);
 

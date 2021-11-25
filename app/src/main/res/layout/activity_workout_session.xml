@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:id="@+id/workoutNo"
-        android:text="Workout #1"
+        android:text="Workout Timer"
         android:textSize="24sp"/>
 
     <TextView
@@ -45,16 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/timer"
-        android:id="@+id/pause"
-        android:text="Pause"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginTop="200dp"
         android:layout_below="@id/timer"
         android:id="@+id/stop"
@@ -63,7 +54,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="220dp"
         android:layout_marginTop="200dp"
         android:layout_below="@id/timer"
         android:id="@+id/start"

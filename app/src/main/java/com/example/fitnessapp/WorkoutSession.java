@@ -15,7 +15,6 @@ public class WorkoutSession extends AppCompatActivity {
     Button homeBtn;
     TextView workoutNum;
     TextView time;
-    Button pauseBtn;
     Button stopBtn;
     Button startBtn;
 
@@ -38,7 +37,6 @@ public class WorkoutSession extends AppCompatActivity {
         homeBtn = findViewById(R.id.home);
         workoutNum = findViewById(R.id.workoutNo);
         time = findViewById(R.id.timer);
-        pauseBtn = findViewById(R.id.pause);
         stopBtn = findViewById(R.id.stop);
         startBtn = findViewById(R.id.start);
 
@@ -81,7 +79,7 @@ public class WorkoutSession extends AppCompatActivity {
                 String height = getWorkout.getStringExtra("PersonHeight");
                 String weight = getWorkout.getStringExtra("PersonWeight");
 
-
+                v7.putExtra("WorkoutType", workout);
                 v7.putExtra("PersonName",name);
                 v7.putExtra("PersonGender", gender);
                 v7.putExtra("PersonAge", ageRange);
@@ -160,7 +158,7 @@ public class WorkoutSession extends AppCompatActivity {
                             String height = getWorkout.getStringExtra("PersonHeight");
                             String weight = getWorkout.getStringExtra("PersonWeight");
 
-
+                            v7.putExtra("WorkoutType", workout);
                             v7.putExtra("PersonName",name);
                             v7.putExtra("PersonGender", gender);
                             v7.putExtra("PersonAge", ageRange);
@@ -223,7 +221,7 @@ public class WorkoutSession extends AppCompatActivity {
                             String height = getWorkout.getStringExtra("PersonHeight");
                             String weight = getWorkout.getStringExtra("PersonWeight");
 
-
+                            v7.putExtra("WorkoutType", workout);
                             v7.putExtra("PersonName",name);
                             v7.putExtra("PersonGender", gender);
                             v7.putExtra("PersonAge", ageRange);
@@ -286,7 +284,7 @@ public class WorkoutSession extends AppCompatActivity {
                             String height = getWorkout.getStringExtra("PersonHeight");
                             String weight = getWorkout.getStringExtra("PersonWeight");
 
-
+                            v7.putExtra("WorkoutType", workout);
                             v7.putExtra("PersonName",name);
                             v7.putExtra("PersonGender", gender);
                             v7.putExtra("PersonAge", ageRange);
@@ -299,13 +297,6 @@ public class WorkoutSession extends AppCompatActivity {
                     }.start();
                 }
 
-
-            }
-        });
-
-        pauseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
             }
         });

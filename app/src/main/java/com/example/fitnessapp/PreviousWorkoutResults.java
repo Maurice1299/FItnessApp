@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class PreviousWorkoutResults extends AppCompatActivity {
 
-    public static SQLiteDatabase db;
+    public static SQLiteDatabase fitnessDB;
     DBHelper fDbHelper;
 
     Button homeBtn;
@@ -83,7 +83,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         } catch (SQLException sqle) {
 
         }
-        db = fDbHelper.getWritableDatabase();
+        fitnessDB = fDbHelper.getWritableDatabase();
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,10 +133,8 @@ public class PreviousWorkoutResults extends AppCompatActivity {
     }
 
     public void getUserDetails(String q, String colName, Integer colNum) {
-        Cursor result = db.rawQuery(q, null);
+        Cursor result = fitnessDB.rawQuery(q, null);
         result.moveToFirst();
-        int count = result.getCount();
-        Log.i("count=", String.valueOf(count));
 
         resultsList = new ArrayList<String>();
 
