@@ -29,52 +29,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:layout_marginLeft="50dp"
-        android:text="Select Workout Session #:"
+        android:text="Select Workout Type:"
         android:textSize="18sp"/>
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
-        android:layout_marginLeft="280dp"
-        android:id="@+id/workoutSession"/>
+        android:layout_marginLeft="240dp"
+        android:id="@+id/workoutType"/>
 
-    <TextView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/workoutSession"
-        android:id="@+id/totalWorkoutTimeTxt"
-        android:text="[Total Workout Time]"
-        android:textSize="18sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_below="@id/workoutSession"
-        android:id="@+id/totalCaloriesBurnedTxt"
-        android:text="[Amount Of Calories Burned]"
-        android:textSize="18sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:layout_below="@id/workoutSession"
-        android:id="@+id/BMITxt"
-        android:text="[Calculated BMI]"
-        android:textSize="18sp"/>
+        android:layout_below="@id/workoutType"
+        android:layout_marginTop="20dp"
+        android:id="@+id/LV"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="220dp"
-        android:layout_below="@id/workoutSession"
+        android:layout_below="@id/LV"
         android:id="@+id/goBack"
         android:text="Go Back"
         android:textSize="18sp"/>
