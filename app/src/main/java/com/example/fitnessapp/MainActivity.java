@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         v2 = new Intent(this, CreateUser.class);
 
+        // Click on the Start button to go to the Create User view.
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

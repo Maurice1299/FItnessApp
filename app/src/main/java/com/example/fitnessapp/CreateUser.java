@@ -48,6 +48,7 @@ public class CreateUser extends AppCompatActivity {
         v1 = new Intent(this, MainActivity.class);
         v3 = new Intent(this, SelectWorkout.class);
 
+        // Set the Array Adapters for the gender and ageRange spinners or drop-down lists.
         ArrayAdapter genderAdapter, ageRangeAdapter;
 
         genderAdapter = new ArrayAdapter(CreateUser.this, R.layout.create_user_spinner, genderArr);
@@ -62,6 +63,7 @@ public class CreateUser extends AppCompatActivity {
         genderSP.setSelection(0);
         ageRangeSP.setSelection(0);
 
+        // Keep track of the selected item in the gender spinner
         genderSP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -74,6 +76,7 @@ public class CreateUser extends AppCompatActivity {
             }
         });
 
+        // Keep track of the selected item in the ageRange spinner
         ageRangeSP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -86,6 +89,7 @@ public class CreateUser extends AppCompatActivity {
             }
         });
 
+        // Click on the Go Back button to go back to the Main Activity screen
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +98,10 @@ public class CreateUser extends AppCompatActivity {
             }
         });
 
+        // Get the user details that were entered in the text fields or selected from the spinners.
+        // If any text field is empty, display the appropriate message to the user.
+        // Intent is used to pass the user data to the next view.
+        // Click on the Proceed button to proceed to the Select Workout screen.
         proceedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
