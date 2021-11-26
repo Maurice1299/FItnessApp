@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_results.xml allows the user to view their results including their total workout time,
+total calories burned, and their calculated BMI. The user can click on the Home button to go back
+ to the Main Activity screen, click on the Select Another Workout button to select a different workout
+ from the Select Workout screen, or click on the Start the Same Workout to start the same workout
+ from the Workout Session screen. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

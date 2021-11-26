@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_previous_workout_results.xml allows you to select a type of workout from a drop-down list
+and view the corresponding workout results for different users. A user can click on the Home button
+to go back to the Main Activity screen or click on the Go Back button to go back to the Select Workout
+screen. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

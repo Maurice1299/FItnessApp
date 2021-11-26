@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_create_user.xml lets the user fill in their personal details before the actual workout session
+so that the details can be stored in Previous Workout Results. The user can click on the Go Back button to go
+ back to the Main Activity screen. The user can also click on the Proceed button to proceed to the Select
+ Workout screen. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

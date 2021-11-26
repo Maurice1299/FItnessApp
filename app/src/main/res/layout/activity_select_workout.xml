@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_select_workout.xml allows the user to select a type of workout from one of the following: Lose Weight,
+Gain Muscle, and Build Endurance. The user can click on the Home button to go back to Main Activity, click on the
+View Previous Workout Sessions button to view previous workout results, or click on Proceed to Workout button
+to start their workout session. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

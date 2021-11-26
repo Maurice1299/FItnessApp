@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_main.xml is what the users see first when the app is launched. The user will see the name of the app (Nen Fitness)
+ as well as the logo. The user can click on the START button to go to the Create User view. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

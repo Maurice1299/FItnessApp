@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_workout_details.xml allows the user to watch a video on the type of workout as well as read
+a short description of the workout. The user can click on the Home button to go back to the Main Activity
+screen, click on the Go Back button to go back to the Select Workout screen, or click on Start Workout Session
+button to start their workout session. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- activity_workout_session.xml displays a countdown timer so the user can keep track of how long they did their workout.
+The user can click on the Go Back button to go back to the Workout Details screen, click on the Home button to go back
+to the Main Activity screen, click on the Start button to start the timer for their workout session, or click on the
+Stop button to stop their workout immediately and go to the Results screen to view their results. -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
