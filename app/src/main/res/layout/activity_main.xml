@@ -8,13 +8,13 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/appname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/appname"
-        android:text="P\u0026M Fitness"
-        android:textSize="28sp"/>
+        android:layout_marginTop="30dp"
+        android:text="Nen Fitness"
+        android:textSize="28sp" />
 
     <!-- Placeholder Image Source: https://pixabay.com/photos/run-treadmill-silhouette-sport-fit-4181899/ -->
     <ImageView
