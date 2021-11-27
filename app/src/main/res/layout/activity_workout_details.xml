@@ -27,6 +27,7 @@ button to start their workout session. -->
         android:layout_marginTop="60dp"
         android:id="@+id/workoutTxt"
         android:text="[Type of Workout]"
+        android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
 
     <FrameLayout
@@ -52,18 +53,20 @@ button to start their workout session. -->
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="60dp"
         android:layout_below="@id/frame"
         android:id="@+id/workoutDesc"
-        android:text="[Description of Workout]"/>
+        android:text="[Description of Workout]"
+        android:textColor="@color/primaryColor"
+        android:textSize="14sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="60dp"
         android:layout_below="@id/workoutDesc"
         android:id="@+id/goBack"
@@ -72,7 +75,7 @@ button to start their workout session. -->
     <Button
         android:layout_width="110dp"
         android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="240dp"
         android:layout_below="@id/workoutDesc"
         android:id="@+id/startWorkout"

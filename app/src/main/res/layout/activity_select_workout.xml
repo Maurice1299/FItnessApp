@@ -26,6 +26,7 @@ to start their workout session. -->
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         android:text="Welcome!"
+        android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
 
     <TextView
@@ -34,6 +35,7 @@ to start their workout session. -->
         android:layout_marginTop="100dp"
         android:layout_marginLeft="50dp"
         android:text="Please Select Type Of Workout:"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <RadioGroup
@@ -49,6 +51,7 @@ to start their workout session. -->
             android:id="@+id/LW"
             android:checked="true"
             android:text="Lose Weight"
+            android:textColor="@color/primaryColor"
             android:textSize="18sp"/>
 
         <RadioButton
@@ -57,6 +60,7 @@ to start their workout session. -->
             android:layout_marginTop="90dp"
             android:id="@+id/GM"
             android:text="Gain Muscle"
+            android:textColor="@color/primaryColor"
             android:textSize="18sp"/>
 
         <RadioButton
@@ -65,6 +69,7 @@ to start their workout session. -->
             android:layout_marginTop="90dp"
             android:id="@+id/BE"
             android:text="Build Endurance"
+            android:textColor="@color/primaryColor"
             android:textSize="18sp"/>
 
     </RadioGroup>

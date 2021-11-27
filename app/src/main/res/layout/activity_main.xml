@@ -9,6 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--Color: Blue 500-->
     <TextView
         android:id="@+id/appname"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="Nen Fitness"
+        android:textColor="@color/primaryColor"
         android:textSize="28sp" />
 
     <!-- Placeholder Image Source: https://pixabay.com/photos/run-treadmill-silhouette-sport-fit-4181899/ -->

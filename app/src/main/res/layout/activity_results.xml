@@ -27,6 +27,7 @@ total calories burned, and their calculated BMI. The user can click on the Home 
         android:layout_marginTop="70dp"
         android:layout_marginLeft="50dp"
         android:text="Congratulations! You Finished Your Workout. Here Are Your Results:"
+        android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
 
     <TextView
@@ -36,6 +37,7 @@ total calories burned, and their calculated BMI. The user can click on the Home 
         android:layout_marginTop="200dp"
         android:id="@+id/totalWorkoutTime"
         android:text="[Total Workout Time]"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <TextView
@@ -45,6 +47,7 @@ total calories burned, and their calculated BMI. The user can click on the Home 
         android:layout_marginTop="250dp"
         android:id="@+id/totalCaloriesBurned"
         android:text="[Total Calories Burned]"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <TextView
@@ -54,6 +57,7 @@ total calories burned, and their calculated BMI. The user can click on the Home 
         android:layout_marginTop="300dp"
         android:id="@+id/calculatedBMI"
         android:text="[Calculated BMI]"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <Button

@@ -36,6 +36,7 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_marginTop="100dp"
         android:id="@+id/workoutNo"
         android:text="Workout Timer"
+        android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
 
     <TextView
@@ -44,6 +45,7 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_centerInParent="true"
         android:id="@+id/timer"
         android:text="HH:MM:SS"
+        android:textColor="@color/primaryColor"
         android:textSize="50sp"/>
 
     <Button

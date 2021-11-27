@@ -17,6 +17,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="Please fill out the following details before you start your workout session:"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <EditText
@@ -32,6 +33,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginLeft="20dp"
         android:layout_marginTop="95dp"
         android:text="Name:"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <TextView
@@ -40,6 +42,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginLeft="20dp"
         android:layout_marginTop="150dp"
         android:text="Gender:"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <Spinner
@@ -56,6 +59,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginLeft="20dp"
         android:layout_marginTop="200dp"
         android:text="Age Range:"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <Spinner
@@ -72,6 +76,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginLeft="20dp"
         android:layout_marginTop="265dp"
         android:text="Height (in):"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <EditText
@@ -89,6 +94,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginLeft="20dp"
         android:layout_marginTop="335dp"
         android:text="Weight (lb):"
+        android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <EditText

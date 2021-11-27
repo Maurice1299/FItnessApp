@@ -29,6 +29,7 @@ public class WorkoutSession extends AppCompatActivity {
     int seconds = 60;
     int minutes = 39;
     int totalSeconds = 0;
+    int totalMinutes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,32 +72,6 @@ public class WorkoutSession extends AppCompatActivity {
             }
         });
 
-        // Use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                int totalMinutes = 40-minutes;
-                v7.putExtra("TotalMin",totalMinutes);
-                v7.putExtra("TotalSecs",totalSeconds);
-
-                String name = getWorkout.getStringExtra("PersonName");
-                String gender = getWorkout.getStringExtra("PersonGender");
-                String ageRange = getWorkout.getStringExtra("PersonAge");
-                String height = getWorkout.getStringExtra("PersonHeight");
-                String weight = getWorkout.getStringExtra("PersonWeight");
-
-                v7.putExtra("WorkoutType", workout);
-                v7.putExtra("PersonName",name);
-                v7.putExtra("PersonGender", gender);
-                v7.putExtra("PersonAge", ageRange);
-                v7.putExtra("PersonHeight",height);
-                v7.putExtra("PersonWeight",weight);
-
-                WorkoutSession.this.startActivity(v7);
-            }
-        });
-
         // Set the countdown timer given the type of workout
         if (workout.equals("Lose Weight"))
         {
@@ -129,6 +104,7 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
+                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -159,7 +135,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            int totalMinutes = 40-minutes;
                             v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
@@ -192,6 +167,7 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
+                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -222,7 +198,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            int totalMinutes = 40-minutes;
                             v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
@@ -255,6 +230,7 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
+                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -285,7 +261,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            int totalMinutes = 40-minutes;
                             v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
@@ -309,6 +284,31 @@ public class WorkoutSession extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        // Use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                v7.putExtra("TotalMin",totalMinutes);
+                v7.putExtra("TotalSecs",totalSeconds);
+
+                String name = getWorkout.getStringExtra("PersonName");
+                String gender = getWorkout.getStringExtra("PersonGender");
+                String ageRange = getWorkout.getStringExtra("PersonAge");
+                String height = getWorkout.getStringExtra("PersonHeight");
+                String weight = getWorkout.getStringExtra("PersonWeight");
+
+                v7.putExtra("WorkoutType", workout);
+                v7.putExtra("PersonName",name);
+                v7.putExtra("PersonGender", gender);
+                v7.putExtra("PersonAge", ageRange);
+                v7.putExtra("PersonHeight",height);
+                v7.putExtra("PersonWeight",weight);
+
+                WorkoutSession.this.startActivity(v7);
             }
         });
 
