@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+// The Create User class lets the user fill out their personal details which will be used later to compute the workout results.
 public class CreateUser extends AppCompatActivity {
 
     Button goBackBtn;
@@ -89,7 +90,7 @@ public class CreateUser extends AppCompatActivity {
             }
         });
 
-        // Click on the Go Back button to go back to the Main Activity screen
+        // When the Go Back button is clicked, go back to the Main Activity view
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +102,7 @@ public class CreateUser extends AppCompatActivity {
         // Get the user details that were entered in the text fields or selected from the spinners.
         // If any text field is empty, display the appropriate message to the user.
         // Intent is used to pass the user data to the next view.
-        // Click on the Proceed button to proceed to the Select Workout screen.
+        // When the Proceed button is clicked, go to the Select Workout view.
         proceedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

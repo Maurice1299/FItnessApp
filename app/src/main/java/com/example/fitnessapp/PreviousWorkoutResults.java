@@ -20,6 +20,8 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// The Previous Workout Results class is used to display the user details in a ListView given a type of workout
+// that is selected from the Spinner.
 public class PreviousWorkoutResults extends AppCompatActivity {
 
     public static SQLiteDatabase fitnessDB;
@@ -59,6 +61,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         userList = findViewById(R.id.LV);
         goBackBtn = findViewById(R.id.goBack);
 
+        // Set the adapter for the spinner
         spinnerAdapter = new ArrayAdapter(PreviousWorkoutResults.this, R.layout.previous_workout_spinner, typeArr);
 
         workoutSpinner.setAdapter(spinnerAdapter);
@@ -67,6 +70,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         v1 = new Intent(this, MainActivity.class);
         v3 = new Intent(this, SelectWorkout.class);
 
+        // Create an empty database
         fDbHelper = new DBHelper(PreviousWorkoutResults.this);
         try {
             fDbHelper.createDataBase();
@@ -76,6 +80,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
             throw new Error("Unable to create database");
         }
 
+        // Open the database
         try {
 
             fDbHelper.openDataBase();
@@ -85,6 +90,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         }
         fitnessDB = fDbHelper.getWritableDatabase();
 
+        // When the Home button is clicked, go back to the Main Activity view.
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +99,7 @@ public class PreviousWorkoutResults extends AppCompatActivity {
             }
         });
 
+        // When the Go Back button is clicked, go back to the Select Workout view.
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,6 +108,8 @@ public class PreviousWorkoutResults extends AppCompatActivity {
             }
         });
 
+        // When an item is selected from the spinner, match the item with the correct workout type
+        // in the workout type array and get the corresponding user details
         workoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -132,6 +141,8 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         });
     }
 
+    // Use the specified query as well as the corresponding column name and column number for the workout type
+    // to set up the list view that consists of the user details
     public void getUserDetails(String q, String colName, Integer colNum) {
         Cursor result = fitnessDB.rawQuery(q, null);
         result.moveToFirst();

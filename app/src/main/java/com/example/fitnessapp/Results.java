@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+// The Results class is used to display the workout results to the user after the workout session is done.
 public class Results extends AppCompatActivity {
 
     Button homeBtn;
@@ -39,6 +40,8 @@ public class Results extends AppCompatActivity {
         v3 = new Intent(Results.this, SelectWorkout.class);
         v6 = new Intent(Results.this, WorkoutSession.class);
 
+        // Use Intent to get the data that was passed from the previous view
+
         getSession = getIntent();
 
         String workout = getSession.getStringExtra("WorkoutType");
@@ -50,14 +53,16 @@ public class Results extends AppCompatActivity {
         int min = getSession.getIntExtra("TotalMin",0);
         int secs = getSession.getIntExtra("TotalSecs",0);
 
+        // Display the total workout time to the user
         totalTime.setText("You worked out for " + min +" minutes and "+ secs + " seconds");
-
-        //Calories Burned:
-        //For men: 66 + (6.2 * weight) + (12.7 * height) – (6.76 * age)
-        //For women: 655.1 + (4.35 * weight) + (4.7 * height) – (4.7 * age)
 
         float calories = 0f;
 
+        // Formula for Total Calories Burned:
+        // For men: 66 + (6.2 * weight) + (12.7 * height) – (6.76 * age)
+        // For women: 655.1 + (4.35 * weight) + (4.7 * height) – (4.7 * age)
+
+        // If the user is Male with a specified age range, calculate the total amount of calories burned using the given formula
         if (gender.equals("Male"))
         {
             if (age.equals("14-17"))
@@ -81,6 +86,7 @@ public class Results extends AppCompatActivity {
                 calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 49));
             }
         }
+        // If the user is Female with a specified age range, calculate the total amount of calories burned using the given formula
         else if (gender.equals("Female"))
         {
             if (age.equals("14-17"))
@@ -107,14 +113,18 @@ public class Results extends AppCompatActivity {
 
         calories = calories * 1.55f;
 
+        // Display the total amount of calories burned to the user
         totalCalories.setText("You burned a total of "+calories+" calories");
 
-        //BMI = [weight (lb) / height (in) / height (in)] x 703
+        // BMI Formula: BMI = [weight (lb) / height (in) / height (in)] x 703
 
+        // Calculate the BMI using the given formula
         float BMIValue = ((Float.parseFloat(weight))/(Float.parseFloat(height))/(Float.parseFloat(height)))*703;
 
+        // Display the calculated BMI to the user
         BMI.setText("Your BMI is "+String.valueOf(BMIValue));
 
+        // When the Home button is clicked, go back to the Main Activity view
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +133,8 @@ public class Results extends AppCompatActivity {
             }
         });
 
+        // When the Select Another Workout button is clicked, go back to the Select Workout view
+        // after using Intent to pass user details
         selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,6 +149,8 @@ public class Results extends AppCompatActivity {
             }
         });
 
+        // When the Start the Same Workout button is clicked, go back to the Workout Session view
+        // after using Intent to pass user details
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

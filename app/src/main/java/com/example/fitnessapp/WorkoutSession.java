@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+// The Workout Session class is used to display and control the countdown timer
+// as the user is working out.
 public class WorkoutSession extends AppCompatActivity {
 
     Button goBackBtn;
@@ -44,9 +46,12 @@ public class WorkoutSession extends AppCompatActivity {
         v5 = new Intent(this, WorkoutDetails.class);
         v7 = new Intent(this, Results.class);
 
+        // Use Intent to get the type of workout from the previous view
         getWorkout = getIntent();
         String workout = getWorkout.getStringExtra("WorkoutType");
 
+        // Use Intent to pass the type of workout to the Workout Details view.
+        // When the Go Back button gets clicked, go back to the Workout Details view.
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +62,7 @@ public class WorkoutSession extends AppCompatActivity {
             }
         });
 
+        // When the Home button gets clicked, go back to the Main Activity view.
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +71,7 @@ public class WorkoutSession extends AppCompatActivity {
             }
         });
 
+        // Use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
         stopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +97,7 @@ public class WorkoutSession extends AppCompatActivity {
             }
         });
 
+        // Set the countdown timer given the type of workout
         if (workout.equals("Lose Weight"))
         {
             time.setText("00:40:00");
@@ -103,6 +111,9 @@ public class WorkoutSession extends AppCompatActivity {
             time.setText("00:40:00");
         }
 
+        // When the Start button gets clicked, start the corresponding countdown timer given the type of workout.
+        // For each countdown timer, keep track of the total minutes and total seconds that are elapsed and display the timer correctly.
+        // Once the timer is finished, use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+// The Workout Details class is used to display a video and a text description that would explain the type of workout
+// specified by the user in the Select Workout view.
 public class WorkoutDetails extends AppCompatActivity {
 
     Button homeBtn;
@@ -42,15 +44,19 @@ public class WorkoutDetails extends AppCompatActivity {
         v3 = new Intent(this, SelectWorkout.class);
         v6 = new Intent(this, WorkoutSession.class);
 
+        // Use Intent to get the type of workout from the previous view
         getWorkout = getIntent();
         String workout = getWorkout.getStringExtra("WorkoutType");
 
+        // Set the text view to the type of workout that was selected by the user
         workoutLabel.setText(workout);
 
+        // Set up the web view in order to display the workout video to the user
         workoutWeb.getSettings().setJavaScriptEnabled(true);
 
         workoutWeb.setWebViewClient(new WebViewClient());
 
+        // Ensure the workout video corresponding to the type of workout selected by the user gets displayed
         if (workout.equals("Lose Weight"))
         {
             workoutWeb.loadUrl("https://www.youtube.com/watch?v=H3jJ29oE8Zg");
@@ -67,6 +73,8 @@ public class WorkoutDetails extends AppCompatActivity {
             description.setText("In order to build endurance, you need to do eight exercises for 2 rounds. The eight exercises are lateral hops, squat jumps, ventral hops, burpees, lateral jumps, jumping lunges, agility dots, and mountain climbers. For each exercise, you need to do 16 reps. This training regimen doesn't require any equipment.");
         }
 
+        // When the progress bar's progress is at 100, don't show the progress bar
+        // Otherwise, show the progress bar
         workoutWeb.setWebChromeClient(new WebChromeClient()
         {
             public void onProgressChanged(WebView view, int progress)
@@ -82,6 +90,7 @@ public class WorkoutDetails extends AppCompatActivity {
             }
         });
 
+        // When the Home button gets clicked, go back to the Main Activity view
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +99,7 @@ public class WorkoutDetails extends AppCompatActivity {
             }
         });
 
+        // When the Go Back button gets clicked, go back to the Select Workout view
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +108,8 @@ public class WorkoutDetails extends AppCompatActivity {
             }
         });
 
+        // Use Intents to get the user details as well as pass the type of workout and user details to the Workout Session view.
+        // When the Start Workout Session button gets clicked, go to the Workout Session view.
         startWorkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +120,6 @@ public class WorkoutDetails extends AppCompatActivity {
                 String ageRange = getWorkout.getStringExtra("PersonAge");
                 String height = getWorkout.getStringExtra("PersonHeight");
                 String weight = getWorkout.getStringExtra("PersonWeight");
-
 
                 v6.putExtra("PersonName",name);
                 v6.putExtra("PersonGender", gender);

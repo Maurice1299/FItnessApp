@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import java.io.IOException;
 
+// The Main Activity class is used to setup the startup screen.
 public class MainActivity extends AppCompatActivity {
 
     Button startBtn;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         v2 = new Intent(this, CreateUser.class);
 
-        // Click on the Start button to go to the Create User view.
+        // When the Start button is clicked, go to the Create User view.
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

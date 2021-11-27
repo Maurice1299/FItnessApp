@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+// The Select Workout class allows the user to select a type of workout.
 public class SelectWorkout extends AppCompatActivity {
 
     Button proceedBtn;
@@ -36,6 +37,7 @@ public class SelectWorkout extends AppCompatActivity {
         v4 = new Intent(this, PreviousWorkoutResults.class);
         v5 = new Intent(this, WorkoutDetails.class);
 
+        // Keep track of the selected workout type by checking which radio button gets checked
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -55,6 +57,7 @@ public class SelectWorkout extends AppCompatActivity {
             }
         });
 
+        // When the Home button gets clicked, go back to the Main Activity view
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +66,7 @@ public class SelectWorkout extends AppCompatActivity {
             }
         });
 
+        // When the View Previous Workout Sessions button gets clicked, go to the Previous Workout Results view
         viewPreviousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +75,8 @@ public class SelectWorkout extends AppCompatActivity {
             }
         });
 
+        // Use Intents to get the user details as well as pass the type of workout and user details to the Select Workout view.
+        // When the Proceed to Workout button gets clicked, go to the Select workout view.
         proceedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

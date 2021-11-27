@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+// The DBHelper class is used to setup and get the database ready to be used for the app.
 public class DBHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "/data/data/com.example.fitnessapp/databases/";
@@ -18,11 +19,13 @@ public class DBHelper extends SQLiteOpenHelper {
     private SQLiteDatabase fitnessDB;
     private Context DBHelperContext;
 
+    // Constructor for DBHelper
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 1);
         this.DBHelperContext = context;
     }
 
+    // Checks whether the database exists or not
     private boolean checkDataBase() {
 
         SQLiteDatabase dbCheck = null;
@@ -41,6 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return dbCheck != null ? true : false;
     }
 
+    // Checks whether the database exists and creates a database if it does exist
     public void createDataBase() throws IOException {
 
         boolean dbPresent = checkDataBase();
@@ -64,7 +68,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-
+    // Opens the database
     public void openDataBase() throws SQLException {
 
         String path = DB_PATH + DB_NAME;
@@ -72,6 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    // Closes the database
     @Override
     public synchronized void close() {
 
@@ -82,6 +87,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    // Copies the existing database onto an empty database
     private void copyDataBase() throws IOException {
 
         InputStream iStream = DBHelperContext.getAssets().open(DB_NAME + ".db");
