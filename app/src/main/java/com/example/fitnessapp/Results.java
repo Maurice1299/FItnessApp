@@ -58,7 +58,13 @@ public class Results extends AppCompatActivity {
 
         float calories = 0f;
 
-        // Formula for Total Calories Burned:
+        // Formula for Total Calories Burned: weight * 3.8 (METs for Calisthenics) * workout time
+
+        float totalTime = (float)((min/60)+(secs/3600));
+
+        calories = (float) ((float)(Float.parseFloat(weight)/2.2046) * 3.8 * totalTime);
+
+        /*// Formula for Total Calories Burned:
         // For men: 66 + (6.2 * weight) + (12.7 * height) – (6.76 * age)
         // For women: 655.1 + (4.35 * weight) + (4.7 * height) – (4.7 * age)
 
@@ -111,7 +117,7 @@ public class Results extends AppCompatActivity {
             }
         }
 
-        calories = calories * 1.55f;
+        calories = calories * 1.55f;*/
 
         // Display the total amount of calories burned to the user
         totalCalories.setText("You burned a total of "+calories+" calories");
