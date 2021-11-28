@@ -21,6 +21,7 @@
         android:textSize="28sp" />
 
     <!-- Placeholder Image Source: https://pixabay.com/photos/run-treadmill-silhouette-sport-fit-4181899/ -->
+    <!-- Image Source: https://pixabay.com/vectors/logo-fitness-circle-sports-1861420/ -->
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
