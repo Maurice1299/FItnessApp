@@ -13,9 +13,14 @@
         <entry key="..\:/Users/Pubudu/Downloads/FItnessApp/app/src/main/res/layout/create_user_spinner.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Pubudu/Downloads/FItnessApp/app/src/main/res/layout/previous_workout_list.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Pubudu/Downloads/FItnessApp/app/src/main/res/layout/previous_workout_spinner.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_create_user.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/activity_previous_workout_results.xml" value="0.7952233068315359" />
+        <entry key="app/src/main/res/layout/activity_results.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_workout_session.xml" value="0.13728470111448834" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
