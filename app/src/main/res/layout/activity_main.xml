@@ -9,7 +9,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--Color: Blue 500-->
     <TextView
         android:id="@+id/appname"
         android:layout_width="wrap_content"
