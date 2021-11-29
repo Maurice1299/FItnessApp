@@ -29,7 +29,6 @@ public class WorkoutSession extends AppCompatActivity {
     int seconds = 60;
     int minutes = 39;
     int totalSeconds = 0;
-    int totalMinutes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +103,6 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
-                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -135,7 +133,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
                             String name = getWorkout.getStringExtra("PersonName");
@@ -167,7 +164,6 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
-                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -198,7 +194,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
                             String name = getWorkout.getStringExtra("PersonName");
@@ -230,7 +225,6 @@ public class WorkoutSession extends AppCompatActivity {
                             if (seconds == 0)
                             {
                                 //issue: timer skips over 0 and doesn't display it.
-                                totalMinutes++;
                                 minutes--;
                                 time.setText("00:"+String.valueOf(minutes)+":00");
                                 seconds = 59;
@@ -261,7 +255,6 @@ public class WorkoutSession extends AppCompatActivity {
                         @Override
                         public void onFinish() {
 
-                            v7.putExtra("TotalMin",totalMinutes);
                             v7.putExtra("TotalSecs",totalSeconds);
 
                             String name = getWorkout.getStringExtra("PersonName");
@@ -292,7 +285,6 @@ public class WorkoutSession extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                v7.putExtra("TotalMin",totalMinutes);
                 v7.putExtra("TotalSecs",totalSeconds);
 
                 String name = getWorkout.getStringExtra("PersonName");

@@ -50,74 +50,22 @@ public class Results extends AppCompatActivity {
         String age = getSession.getStringExtra("PersonAge");
         String height = getSession.getStringExtra("PersonHeight");
         String weight = getSession.getStringExtra("PersonWeight");
-        int min = getSession.getIntExtra("TotalMin",0);
         int secs = getSession.getIntExtra("TotalSecs",0);
 
+        int cal_mins = (int) Math.floor(secs/60);
+
+        int cal_secs = secs - (cal_mins * 60);
+
         // Display the total workout time to the user
-        totalTime.setText("You worked out for " + min +" minutes and "+ secs + " seconds");
+        totalTime.setText("You worked out for " + cal_mins +" minutes and "+ cal_secs + " seconds");
 
         float calories = 0f;
 
         // Formula for Total Calories Burned: weight * 3.8 (METs for Calisthenics) * workout time
 
-        float totalTime = (float)((min/60)+(secs/3600));
+        float totalTime = (float)(secs/3600);
 
         calories = (float) ((float)(Float.parseFloat(weight)/2.2046) * 3.8 * totalTime);
-
-        /*// Formula for Total Calories Burned:
-        // For men: 66 + (6.2 * weight) + (12.7 * height) – (6.76 * age)
-        // For women: 655.1 + (4.35 * weight) + (4.7 * height) – (4.7 * age)
-
-        // If the user is Male with a specified age range, calculate the total amount of calories burned using the given formula
-        if (gender.equals("Male"))
-        {
-            if (age.equals("14-17"))
-            {
-                calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 16));
-            }
-            else if (age.equals("18-24"))
-            {
-                calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 21));
-            }
-            else if (age.equals("25-35"))
-            {
-                calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 30));
-            }
-            else if (age.equals("36-48"))
-            {
-                calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 42));
-            }
-            else if (age.equals("49+"))
-            {
-                calories = (float)(66 + (6.2 * Float.parseFloat(weight)) + (12.7 * Float.parseFloat(height)) - (6.76 * 49));
-            }
-        }
-        // If the user is Female with a specified age range, calculate the total amount of calories burned using the given formula
-        else if (gender.equals("Female"))
-        {
-            if (age.equals("14-17"))
-            {
-                calories = (float)(655.1 + (4.35 * Float.parseFloat(weight)) + (4.7 * Float.parseFloat(height)) - (4.7 * 16));
-            }
-            else if (age.equals("18-24"))
-            {
-                calories = (float)(655.1 + (4.35 * Float.parseFloat(weight)) + (4.7 * Float.parseFloat(height)) - (4.7 * 21));
-            }
-            else if (age.equals("25-35"))
-            {
-                calories = (float)(655.1 + (4.35 * Float.parseFloat(weight)) + (4.7 * Float.parseFloat(height)) - (4.7 * 30));
-            }
-            else if (age.equals("36-48"))
-            {
-                calories = (float)(655.1 + (4.35 * Float.parseFloat(weight)) + (4.7 * Float.parseFloat(height)) - (4.7 * 42));
-            }
-            else if (age.equals("49+"))
-            {
-                calories = (float)(655.1 + (4.35 * Float.parseFloat(weight)) + (4.7 * Float.parseFloat(height)) - (4.7 * 49));
-            }
-        }
-
-        calories = calories * 1.55f;*/
 
         // Display the total amount of calories burned to the user
         totalCalories.setText("You burned a total of "+calories+" calories");
