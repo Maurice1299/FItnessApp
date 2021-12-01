@@ -100,9 +100,24 @@ public class WorkoutDetails extends AppCompatActivity {
         });
 
         // When the Go Back button gets clicked, go back to the Select Workout view
+        // Use Intents to get the user details as well as pass the type of workout and user details to the Select Session view.
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                v3.putExtra("WorkoutType", workout);
+
+                String name = getWorkout.getStringExtra("PersonName");
+                String gender = getWorkout.getStringExtra("PersonGender");
+                String ageRange = getWorkout.getStringExtra("PersonAge");
+                String height = getWorkout.getStringExtra("PersonHeight");
+                String weight = getWorkout.getStringExtra("PersonWeight");
+
+                v3.putExtra("PersonName",name);
+                v3.putExtra("PersonGender", gender);
+                v3.putExtra("PersonAge", ageRange);
+                v3.putExtra("PersonHeight",height);
+                v3.putExtra("PersonWeight",weight);
 
                 WorkoutDetails.this.startActivity(v3);
             }

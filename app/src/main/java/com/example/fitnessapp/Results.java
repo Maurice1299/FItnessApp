@@ -19,6 +19,7 @@ public class Results extends AppCompatActivity {
     TextView totalTime;
     TextView totalCalories;
     TextView BMI;
+    TextView resultsTxt;
 
     Intent v1,v3,v6;
 
@@ -35,6 +36,7 @@ public class Results extends AppCompatActivity {
         totalTime = findViewById(R.id.totalWorkoutTime);
         totalCalories = findViewById(R.id.totalCaloriesBurned);
         BMI = findViewById(R.id.calculatedBMI);
+        resultsTxt = findViewById(R.id.rTxt);
 
         v1 = new Intent(Results.this, MainActivity.class);
         v3 = new Intent(Results.this, SelectWorkout.class);
@@ -51,6 +53,8 @@ public class Results extends AppCompatActivity {
         String height = getSession.getStringExtra("PersonHeight");
         String weight = getSession.getStringExtra("PersonWeight");
         int secs = getSession.getIntExtra("TotalSecs",0);
+
+        resultsTxt.setText("Congratulations, " + name + "! You Finished Your Workout. Here Are Your Results:");
 
         int cal_mins = (int) Math.floor(secs/60);
 

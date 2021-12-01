@@ -55,7 +55,8 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_marginTop="200dp"
         android:layout_below="@id/timer"
         android:id="@+id/stop"
-        android:text="Stop"/>
+        android:text="Stop"
+        android:textSize="18sp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -64,6 +65,7 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_marginTop="200dp"
         android:layout_below="@id/timer"
         android:id="@+id/start"
-        android:text="Start"/>
+        android:text="Start"
+        android:textSize="18sp"/>
 
 </RelativeLayout>

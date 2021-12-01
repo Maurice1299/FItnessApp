@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 // The Select Workout class allows the user to select a type of workout.
 public class SelectWorkout extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class SelectWorkout extends AppCompatActivity {
     Button homeBtn;
     Button viewPreviousBtn;
     RadioGroup rg;
+    TextView welcome;
 
     Intent v1,v4,v5;
 
@@ -32,10 +34,17 @@ public class SelectWorkout extends AppCompatActivity {
         homeBtn = findViewById(R.id.home);
         viewPreviousBtn = findViewById(R.id.viewPrevious);
         rg = findViewById(R.id.rGroup);
+        welcome = findViewById(R.id.welcomeTxt);
 
         v1 = new Intent(this, MainActivity.class);
         v4 = new Intent(this, PreviousWorkoutResults.class);
         v5 = new Intent(this, WorkoutDetails.class);
+
+        getUser = getIntent();
+
+        String name = getUser.getStringExtra("PersonName");
+
+        welcome.setText("Welcome, " + name + "!");
 
         // Keep track of the selected workout type by checking which radio button gets checked
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -83,9 +92,7 @@ public class SelectWorkout extends AppCompatActivity {
 
                 v5.putExtra("WorkoutType",rbSelected);
 
-                getUser = getIntent();
 
-                String name = getUser.getStringExtra("PersonName");
                 String gender = getUser.getStringExtra("PersonGender");
                 String ageRange = getUser.getStringExtra("PersonAge");
                 String height = getUser.getStringExtra("PersonHeight");

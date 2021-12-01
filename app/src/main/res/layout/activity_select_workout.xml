@@ -25,6 +25,7 @@ to start their workout session. -->
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
+        android:id="@+id/welcomeTxt"
         android:text="Welcome!"
         android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
@@ -41,7 +42,7 @@ to start their workout session. -->
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="140dp"
         android:layout_marginLeft="50dp"
         android:id="@+id/rGroup">
 
@@ -78,7 +79,7 @@ to start their workout session. -->
     <ImageView
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:layout_marginLeft="230dp"
         android:src="@drawable/weight"/>
 
@@ -86,7 +87,7 @@ to start their workout session. -->
     <ImageView
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="250dp"
         android:layout_marginLeft="230dp"
         android:src="@drawable/muscle"/>
 
@@ -94,23 +95,23 @@ to start their workout session. -->
     <ImageView
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="390dp"
         android:layout_marginLeft="230dp"
         android:src="@drawable/endurance"/>
 
     <Button
-        android:layout_width="110dp"
+        android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="500dp"
         android:layout_marginLeft="60dp"
         android:id="@+id/viewPrevious"
-        android:text="View Previous Workout Sessions"
+        android:text="View Previous Workouts"
         android:textSize="14sp"/>
     
     <Button
         android:layout_width="110dp"
         android:layout_height="100dp"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="500dp"
         android:layout_marginLeft="250dp"
         android:id="@+id/proceed"
         android:text="Proceed to Workout"

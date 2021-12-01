@@ -22,10 +22,11 @@ total calories burned, and their calculated BMI. The user can click on the Home 
         android:textSize="18sp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:layout_marginLeft="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rTxt"
         android:text="Congratulations! You Finished Your Workout. Here Are Your Results:"
         android:textColor="@color/primaryColor"
         android:textSize="24sp"/>
