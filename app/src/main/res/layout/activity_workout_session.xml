@@ -52,8 +52,7 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="110dp"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/timer"
+        android:layout_alignParentBottom="true"
         android:id="@+id/stop"
         android:text="Stop"
         android:textSize="18sp"/>
@@ -62,8 +61,7 @@ Stop button to stop their workout immediately and go to the Results screen to vi
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/timer"
+        android:layout_alignParentBottom="true"
         android:id="@+id/start"
         android:text="Start"
         android:textSize="18sp"/>

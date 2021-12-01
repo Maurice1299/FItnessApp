@@ -31,10 +31,12 @@ to start their workout session. -->
         android:textSize="24sp"/>
 
     <TextView
+        android:id="@+id/selectTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
+        android:layout_below="@id/welcomeTxt"
         android:text="Please Select Type Of Workout:"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
@@ -42,8 +44,9 @@ to start their workout session. -->
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="50dp"
+        android:layout_below="@id/selectTxt"
         android:id="@+id/rGroup">
 
         <RadioButton
@@ -77,41 +80,47 @@ to start their workout session. -->
 
     <!-- Placeholder Image Source: https://pixabay.com/photos/scale-diet-fat-health-tape-weight-403585/ -->
     <ImageView
+        android:id="@+id/LWImg"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="230dp"
+        android:layout_below="@id/selectTxt"
         android:src="@drawable/weight"/>
 
     <!-- Placeholder Image Source: https://pixabay.com/vectors/gym-logo-fitness-exercise-6560341/ -->
     <ImageView
+        android:id="@+id/GMImg"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="230dp"
+        android:layout_below="@id/LWImg"
         android:src="@drawable/muscle"/>
 
     <!-- Placeholder Image Source: https://pixabay.com/vectors/man-athlete-marathon-jogging-run-6513000/ -->
     <ImageView
+        android:id="@+id/BEImg"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="230dp"
+        android:layout_below="@id/GMImg"
         android:src="@drawable/endurance"/>
 
     <Button
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginTop="500dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="60dp"
         android:id="@+id/viewPrevious"
         android:text="View Previous Workouts"
         android:textSize="14sp"/>
     
     <Button
-        android:layout_width="110dp"
+        android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginTop="500dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="250dp"
         android:id="@+id/proceed"
         android:text="Proceed to Workout"

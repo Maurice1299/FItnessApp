@@ -12,6 +12,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
     tools:context=".CreateUser">
 
     <TextView
+        android:id="@+id/uTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -25,24 +26,29 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/uTxt"
         android:maxLength="15"
         android:maxLines="1"/>
 
     <TextView
+        android:id="@+id/uName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/uTxt"
         android:text="Name:"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <TextView
+        android:id="@+id/uGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/uName"
         android:text="Gender:"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
@@ -56,10 +62,12 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginTop="25dp"/>
 
     <TextView
+        android:id="@+id/uAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/uGender"
         android:text="Age Range:"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
@@ -73,10 +81,12 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_marginTop="25dp"/>
 
     <TextView
+        android:id="@+id/uHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/uAge"
         android:text="Height (in):"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
@@ -91,10 +101,12 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:inputType="number"/>
 
     <TextView
+        android:id="@+id/uWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/uHeight"
         android:text="Weight (lb):"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
