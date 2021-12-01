@@ -129,24 +129,24 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         workoutSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String query = "select * from User";
+                String userQuery = "select * from User";
                 String colName = typeArr[i];
-                int colNum = 0;
+                String workoutQuery = "";
 
-                if (typeArr[i].equals("Gain Muscle"))
+                if (colName.equals("Gain Muscle"))
                 {
-                    colNum = 6;
-                    getUserDetails(query, colName, colNum);
+                    workoutQuery = "select Total_Workout_Time_GM from total_workout_time";
+                    getUserDetails(userQuery, workoutQuery, colName);
                 }
-                else if (typeArr[i].equals("Build Endurance"))
+                else if (colName.equals("Build Endurance"))
                 {
-                    colNum = 7;
-                    getUserDetails(query, colName, colNum);
+                    workoutQuery = "select Total_Workout_Time_BE from total_workout_time";
+                    getUserDetails(userQuery, workoutQuery, colName);
                 }
-                else if (typeArr[i].equals("Lose Weight"))
+                else if (colName.equals("Lose Weight"))
                 {
-                    colNum = 8;
-                    getUserDetails(query, colName, colNum);
+                    workoutQuery = "select Total_Workout_Time_LW from total_workout_time";
+                    getUserDetails(userQuery, workoutQuery, colName);
                 }
             }
 
@@ -159,9 +159,12 @@ public class PreviousWorkoutResults extends AppCompatActivity {
 
     // Use the specified query as well as the corresponding column name and column number for the workout type
     // to set up the list view that consists of the user details
-    public void getUserDetails(String q, String colName, Integer colNum) {
-        Cursor result = fitnessDB.rawQuery(q, null);
-        result.moveToFirst();
+    public void getUserDetails(String user, String workout, String colName) {
+        Cursor uResult = fitnessDB.rawQuery(user, null);
+        uResult.moveToFirst();
+
+        Cursor wResult = fitnessDB.rawQuery(workout, null);
+        wResult.moveToFirst();
 
         resultsList = new ArrayList<String>();
 
@@ -177,10 +180,10 @@ public class PreviousWorkoutResults extends AppCompatActivity {
 
         do {
 
-            resultsList.add("ID: " + result.getInt(0) + " | " + "Name: " + result.getString(1) + " | " + "Age: " + result.getInt(2) + " | " + "Gender: " + result.getString(3)
-            + " | " + "Weight: " + result.getInt(4) + " | " + "Height: " + result.getInt(5) + " | " + colName + " Workout Time: " + result.getInt(colNum));
+            resultsList.add("ID: " + uResult.getInt(0) + " | " + "Name: " + uResult.getString(1) + " | " + "Age: " + uResult.getInt(2) + " | " + "Gender: " + uResult.getString(3)
+            + " | " + "Weight: " + uResult.getInt(4) + " | " + "Height: " + uResult.getInt(5) + " | " + colName + " Workout Time: " + wResult.getInt(0));
 
-        } while (result.moveToNext());
+        } while (uResult.moveToNext() && wResult.moveToNext());
 
         listAdapter = new ArrayAdapter(PreviousWorkoutResults.this, R.layout.previous_workout_list, resultsList);
         userList.setAdapter(listAdapter);
