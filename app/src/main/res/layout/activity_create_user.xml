@@ -22,10 +22,12 @@ so that the details can be stored in Previous Workout Results. The user can clic
 
     <EditText
         android:id="@+id/nameET"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="80dp"
+        android:maxLength="15"
+        android:maxLines="1"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,7 +48,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:textSize="18sp"/>
 
     <Spinner
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:id="@+id/genderSP"
         android:layout_marginLeft="120dp"
@@ -63,7 +65,7 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:textSize="18sp"/>
 
     <Spinner
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:id="@+id/ageRangeSP"
         android:layout_marginLeft="120dp"
@@ -74,14 +76,14 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="265dp"
+        android:layout_marginTop="260dp"
         android:text="Height (in):"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <EditText
         android:id="@+id/heightET"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_below="@id/ageRangeSP"
@@ -92,14 +94,14 @@ so that the details can be stored in Previous Workout Results. The user can clic
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="330dp"
         android:text="Weight (lb):"
         android:textColor="@color/primaryColor"
         android:textSize="18sp"/>
 
     <EditText
         android:id="@+id/weightET"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_below="@id/heightET"
