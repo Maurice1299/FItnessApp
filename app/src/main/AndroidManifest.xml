@@ -13,24 +13,31 @@
         android:theme="@style/Theme.FitnessApp">
         <activity
             android:name=".CreateUser"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".PreviousWorkoutResults"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".Results"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".WorkoutSession"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".WorkoutDetails"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SelectWorkout"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
