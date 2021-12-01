@@ -103,6 +103,7 @@ public class WorkoutSession extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                startBtn.setEnabled(false);
                 if (workout.equals("Lose Weight"))
                 {
                     countdownFunc(workout);
