@@ -34,6 +34,8 @@ public class PreviousWorkoutResults extends AppCompatActivity {
 
     Intent v1, v3;
 
+    Intent getUser;
+
     ArrayAdapter spinnerAdapter;
     ArrayAdapter listAdapter;
 
@@ -70,6 +72,8 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         v1 = new Intent(this, MainActivity.class);
         v3 = new Intent(this, SelectWorkout.class);
 
+        getUser = getIntent();
+
         // Create an empty database
         fDbHelper = new DBHelper(PreviousWorkoutResults.this);
         try {
@@ -103,6 +107,18 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         goBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String name = getUser.getStringExtra("PersonName");
+                String gender = getUser.getStringExtra("PersonGender");
+                String ageRange = getUser.getStringExtra("PersonAge");
+                String height = getUser.getStringExtra("PersonHeight");
+                String weight = getUser.getStringExtra("PersonWeight");
+
+                v3.putExtra("PersonName",name);
+                v3.putExtra("PersonGender", gender);
+                v3.putExtra("PersonAge", ageRange);
+                v3.putExtra("PersonHeight",height);
+                v3.putExtra("PersonWeight",weight);
 
                 PreviousWorkoutResults.this.startActivity(v3);
             }

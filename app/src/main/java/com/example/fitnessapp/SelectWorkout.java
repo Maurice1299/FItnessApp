@@ -80,6 +80,17 @@ public class SelectWorkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String gender = getUser.getStringExtra("PersonGender");
+                String ageRange = getUser.getStringExtra("PersonAge");
+                String height = getUser.getStringExtra("PersonHeight");
+                String weight = getUser.getStringExtra("PersonWeight");
+
+                v4.putExtra("PersonName",name);
+                v4.putExtra("PersonGender", gender);
+                v4.putExtra("PersonAge", ageRange);
+                v4.putExtra("PersonHeight",height);
+                v4.putExtra("PersonWeight",weight);
+
                 SelectWorkout.this.startActivity(v4);
             }
         });
@@ -91,7 +102,6 @@ public class SelectWorkout extends AppCompatActivity {
             public void onClick(View view) {
 
                 v5.putExtra("WorkoutType",rbSelected);
-
 
                 String gender = getUser.getStringExtra("PersonGender");
                 String ageRange = getUser.getStringExtra("PersonAge");
