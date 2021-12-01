@@ -86,224 +86,109 @@ public class WorkoutSession extends AppCompatActivity {
         }
 
         // When the Start button gets clicked, start the corresponding countdown timer given the type of workout.
-        // For each countdown timer, keep track of the total minutes and total seconds that are elapsed and display the timer correctly.
-        // Once the timer is finished, use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (workout.equals("Lose Weight"))
                 {
-                    timer = new CountDownTimer(2400000,1000) {
-                        @Override
-                        public void onTick(long l) {
-
-                            totalSeconds++;
-                            seconds--;
-                            if (seconds == 0)
-                            {
-                                //issue: timer skips over 0 and doesn't display it.
-                                minutes--;
-                                time.setText("00:"+String.valueOf(minutes)+":00");
-                                seconds = 59;
-                                if (minutes == 0)
-                                {
-                                    timer.cancel();
-                                }
-                                else if ((minutes < 10) && (minutes > 0))
-                                {
-                                    time.setText("00:0"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                                else
-                                {
-                                    time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                            }
-                            else if ((seconds < 10) && (seconds > 0))
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":0"+String.valueOf(seconds));
-                            }
-                            else
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                            }
-
-                        }
-
-                        @Override
-                        public void onFinish() {
-
-                            v7.putExtra("TotalSecs",totalSeconds);
-
-                            String name = getWorkout.getStringExtra("PersonName");
-                            String gender = getWorkout.getStringExtra("PersonGender");
-                            String ageRange = getWorkout.getStringExtra("PersonAge");
-                            String height = getWorkout.getStringExtra("PersonHeight");
-                            String weight = getWorkout.getStringExtra("PersonWeight");
-
-                            v7.putExtra("WorkoutType", workout);
-                            v7.putExtra("PersonName",name);
-                            v7.putExtra("PersonGender", gender);
-                            v7.putExtra("PersonAge", ageRange);
-                            v7.putExtra("PersonHeight",height);
-                            v7.putExtra("PersonWeight",weight);
-
-                            WorkoutSession.this.startActivity(v7);
-
-                        }
-                    }.start();
+                    countdownFunc(workout);
                 }
                 else if (workout.equals("Gain Muscle"))
                 {
-                    timer = new CountDownTimer(2400000,1000) {
-                        @Override
-                        public void onTick(long l) {
-
-                            totalSeconds++;
-                            seconds--;
-                            if (seconds == 0)
-                            {
-                                //issue: timer skips over 0 and doesn't display it.
-                                minutes--;
-                                time.setText("00:"+String.valueOf(minutes)+":00");
-                                seconds = 59;
-                                if (minutes == 0)
-                                {
-                                    timer.cancel();
-                                }
-                                else if ((minutes < 10) && (minutes > 0))
-                                {
-                                    time.setText("00:0"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                                else
-                                {
-                                    time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                            }
-                            else if ((seconds < 10) && (seconds > 0))
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":0"+String.valueOf(seconds));
-                            }
-                            else
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                            }
-
-                        }
-
-                        @Override
-                        public void onFinish() {
-
-                            v7.putExtra("TotalSecs",totalSeconds);
-
-                            String name = getWorkout.getStringExtra("PersonName");
-                            String gender = getWorkout.getStringExtra("PersonGender");
-                            String ageRange = getWorkout.getStringExtra("PersonAge");
-                            String height = getWorkout.getStringExtra("PersonHeight");
-                            String weight = getWorkout.getStringExtra("PersonWeight");
-
-                            v7.putExtra("WorkoutType", workout);
-                            v7.putExtra("PersonName",name);
-                            v7.putExtra("PersonGender", gender);
-                            v7.putExtra("PersonAge", ageRange);
-                            v7.putExtra("PersonHeight",height);
-                            v7.putExtra("PersonWeight",weight);
-
-                            WorkoutSession.this.startActivity(v7);
-
-                        }
-                    }.start();
+                    countdownFunc(workout);
                 }
                 else if (workout.equals("Build Endurance"))
                 {
-                    timer = new CountDownTimer(2400000,1000) {
-                        @Override
-                        public void onTick(long l) {
-
-                            totalSeconds++;
-                            seconds--;
-                            if (seconds == 0)
-                            {
-                                //issue: timer skips over 0 and doesn't display it.
-                                minutes--;
-                                time.setText("00:"+String.valueOf(minutes)+":00");
-                                seconds = 59;
-                                if (minutes == 0)
-                                {
-                                    timer.cancel();
-                                }
-                                else if ((minutes < 10) && (minutes > 0))
-                                {
-                                    time.setText("00:0"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                                else
-                                {
-                                    time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                                }
-                            }
-                            else if ((seconds < 10) && (seconds > 0))
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":0"+String.valueOf(seconds));
-                            }
-                            else
-                            {
-                                time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
-                            }
-
-                        }
-
-                        @Override
-                        public void onFinish() {
-
-                            v7.putExtra("TotalSecs",totalSeconds);
-
-                            String name = getWorkout.getStringExtra("PersonName");
-                            String gender = getWorkout.getStringExtra("PersonGender");
-                            String ageRange = getWorkout.getStringExtra("PersonAge");
-                            String height = getWorkout.getStringExtra("PersonHeight");
-                            String weight = getWorkout.getStringExtra("PersonWeight");
-
-                            v7.putExtra("WorkoutType", workout);
-                            v7.putExtra("PersonName",name);
-                            v7.putExtra("PersonGender", gender);
-                            v7.putExtra("PersonAge", ageRange);
-                            v7.putExtra("PersonHeight",height);
-                            v7.putExtra("PersonWeight",weight);
-
-                            WorkoutSession.this.startActivity(v7);
-
-                        }
-                    }.start();
+                    countdownFunc(workout);
                 }
 
 
             }
         });
 
+        // Click on the Stop button to stop the workout session and go to the Results view.
         // Use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
         stopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                v7.putExtra("TotalSecs",totalSeconds);
+                passData(v7, workout);
 
-                String name = getWorkout.getStringExtra("PersonName");
-                String gender = getWorkout.getStringExtra("PersonGender");
-                String ageRange = getWorkout.getStringExtra("PersonAge");
-                String height = getWorkout.getStringExtra("PersonHeight");
-                String weight = getWorkout.getStringExtra("PersonWeight");
-
-                v7.putExtra("WorkoutType", workout);
-                v7.putExtra("PersonName",name);
-                v7.putExtra("PersonGender", gender);
-                v7.putExtra("PersonAge", ageRange);
-                v7.putExtra("PersonHeight",height);
-                v7.putExtra("PersonWeight",weight);
-
-                WorkoutSession.this.startActivity(v7);
             }
         });
 
 
+    }
+
+    // Use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
+    public void passData(Intent in, String workoutType)
+    {
+        v7.putExtra("TotalSecs",totalSeconds);
+
+        String name = getWorkout.getStringExtra("PersonName");
+        String gender = getWorkout.getStringExtra("PersonGender");
+        String ageRange = getWorkout.getStringExtra("PersonAge");
+        String height = getWorkout.getStringExtra("PersonHeight");
+        String weight = getWorkout.getStringExtra("PersonWeight");
+
+        v7.putExtra("WorkoutType", workoutType);
+        v7.putExtra("PersonName",name);
+        v7.putExtra("PersonGender", gender);
+        v7.putExtra("PersonAge", ageRange);
+        v7.putExtra("PersonHeight",height);
+        v7.putExtra("PersonWeight",weight);
+
+        WorkoutSession.this.startActivity(v7);
+    }
+
+    // countdownFunc takes in the workout type as a parameter and starts a countdown timer.
+    // The countdown timer keeps track of the total minutes and total seconds that are elapsed and display the timer correctly.
+    // Once the timer is finished, use Intents to get the user details as well as pass the total minutes, total seconds and user details to the Results view.
+    public void countdownFunc(String work)
+    {
+        timer = new CountDownTimer(2400000,1000) {
+            @Override
+            public void onTick(long l) {
+
+                totalSeconds++;
+                seconds--;
+                if (seconds == 0)
+                {
+                    //issue: timer skips over 0 and doesn't display it.
+                    minutes--;
+                    time.setText("00:"+String.valueOf(minutes)+":00");
+                    seconds = 59;
+                    if (minutes == 0)
+                    {
+                        timer.cancel();
+                    }
+                    else if ((minutes < 10) && (minutes > 0))
+                    {
+                        time.setText("00:0"+String.valueOf(minutes)+":"+String.valueOf(seconds));
+                    }
+                    else
+                    {
+                        time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
+                    }
+                }
+                else if ((seconds < 10) && (seconds > 0))
+                {
+                    time.setText("00:"+String.valueOf(minutes)+":0"+String.valueOf(seconds));
+                }
+                else
+                {
+                    time.setText("00:"+String.valueOf(minutes)+":"+String.valueOf(seconds));
+                }
+
+            }
+
+            @Override
+            public void onFinish() {
+
+                passData(v7, work);
+
+            }
+        }.start();
     }
 }
