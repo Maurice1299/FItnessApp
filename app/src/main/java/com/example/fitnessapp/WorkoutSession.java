@@ -19,6 +19,7 @@ public class WorkoutSession extends AppCompatActivity {
     TextView time;
     Button stopBtn;
     Button startBtn;
+    TextView workoutTxt;
 
     CountDownTimer timer;
 
@@ -41,6 +42,7 @@ public class WorkoutSession extends AppCompatActivity {
         time = findViewById(R.id.timer);
         stopBtn = findViewById(R.id.stop);
         startBtn = findViewById(R.id.start);
+        workoutTxt = findViewById(R.id.workoutTV);
 
         v1 = new Intent(this, MainActivity.class);
         v5 = new Intent(this, WorkoutDetails.class);
@@ -49,6 +51,21 @@ public class WorkoutSession extends AppCompatActivity {
         // Use Intent to get the type of workout from the previous view
         getWorkout = getIntent();
         String workout = getWorkout.getStringExtra("WorkoutType");
+
+        // Set the workout description text view based on the workout type that was selected by the user
+        if (workout.equals("Lose Weight"))
+        {
+            workoutTxt.setText("In order to lose weight, you need to do the following exercises: forearm plank, sit-ups, knee-high crunches, basic crunches, sit-up and twist, and dorsal raises. You need to do 3 sets of 10 for the sit-ups, knee-high crunches, basic crunches, sit-up and twist, and dorsal raises.");
+        }
+        else if (workout.equals("Gain Muscle"))
+        {
+            workoutTxt.setText("In order to gain muscle, you need to do plank walkouts, half burpees, leg raises, plank shoulder taps, kneeling plank, reverse crunches, glute bridges, and offset press ups");
+        }
+        else if (workout.equals("Build Endurance"))
+        {
+            workoutTxt.setText("In order to build endurance, you need to do eight exercises for 2 rounds. The eight exercises are lateral hops, squat jumps, ventral hops, burpees, lateral jumps, jumping lunges, agility dots, and mountain climbers. For each exercise, you need to do 16 reps. This training regimen doesn't require any equipment.");
+        }
+
 
         // Use Intents to get the user details as well as pass the type of workout and user details to the Select Session view.
         // When the Go Back button gets clicked, go back to the Workout Details view.
