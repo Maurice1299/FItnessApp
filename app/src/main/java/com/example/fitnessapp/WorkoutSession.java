@@ -59,7 +59,7 @@ public class WorkoutSession extends AppCompatActivity {
         }
         else if (workout.equals("Gain Muscle"))
         {
-            workoutTxt.setText("In order to gain muscle, you need to do plank walkouts, half burpees, leg raises, plank shoulder taps, kneeling plank, reverse crunches, glute bridges, and offset press ups");
+            workoutTxt.setText("In order to gain muscle, you need to do plank walkouts, half burpees, leg raises, plank shoulder taps, kneeling plank, reverse crunches, glute bridges, and offset press ups.");
         }
         else if (workout.equals("Build Endurance"))
         {
