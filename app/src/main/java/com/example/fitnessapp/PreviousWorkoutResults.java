@@ -43,16 +43,6 @@ public class PreviousWorkoutResults extends AppCompatActivity {
 
     ArrayList<String> resultsList;
 
-    /*ArrayList<Integer> IDList;
-    ArrayList<String> nameList;
-    ArrayList<Integer> ageList;
-    ArrayList<String> genderList;
-    ArrayList<Integer> weightList;
-    ArrayList<Integer> heightList;
-    ArrayList<Integer> GMTimeList;
-    ArrayList<Integer> BETimeList;
-    ArrayList<Integer> LWTimeList;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,16 +157,6 @@ public class PreviousWorkoutResults extends AppCompatActivity {
         wResult.moveToFirst();
 
         resultsList = new ArrayList<String>();
-
-        /*IDList = new ArrayList<Integer>();
-        nameList = new ArrayList<String>();
-        ageList = new ArrayList<Integer>();
-        genderList = new ArrayList<String>();
-        weightList = new ArrayList<Integer>();
-        heightList = new ArrayList<Integer>();
-        GMTimeList = new ArrayList<Integer>();
-        BETimeList = new ArrayList<Integer>();
-        LWTimeList = new ArrayList<Integer>();*/
 
         do {
 

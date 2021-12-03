@@ -78,7 +78,7 @@ to start their workout session. -->
 
     </RadioGroup>
 
-    <!-- Placeholder Image Source: https://pixabay.com/photos/scale-diet-fat-health-tape-weight-403585/ -->
+    <!-- Image Source: https://pixabay.com/photos/scale-diet-fat-health-tape-weight-403585/ -->
     <ImageView
         android:id="@+id/LWImg"
         android:layout_width="150dp"
@@ -88,7 +88,7 @@ to start their workout session. -->
         android:layout_below="@id/selectTxt"
         android:src="@drawable/weight"/>
 
-    <!-- Placeholder Image Source: https://pixabay.com/vectors/gym-logo-fitness-exercise-6560341/ -->
+    <!-- Image Source: https://pixabay.com/vectors/gym-logo-fitness-exercise-6560341/ -->
     <ImageView
         android:id="@+id/GMImg"
         android:layout_width="150dp"
@@ -98,7 +98,7 @@ to start their workout session. -->
         android:layout_below="@id/LWImg"
         android:src="@drawable/muscle"/>
 
-    <!-- Placeholder Image Source: https://pixabay.com/vectors/man-athlete-marathon-jogging-run-6513000/ -->
+    <!-- Image Source: https://pixabay.com/vectors/man-athlete-marathon-jogging-run-6513000/ -->
     <ImageView
         android:id="@+id/BEImg"
         android:layout_width="150dp"
