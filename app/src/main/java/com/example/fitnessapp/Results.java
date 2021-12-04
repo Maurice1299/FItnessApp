@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+
 // The Results class is used to display the workout results to the user after the workout session is done.
 public class Results extends AppCompatActivity {
 
@@ -63,16 +65,14 @@ public class Results extends AppCompatActivity {
         // Display the total workout time to the user
         totalTime.setText("You worked out for " + cal_mins +" minutes and "+ cal_secs + " seconds");
 
-        float calories = 0f;
-
         // Formula for Total Calories Burned: weight * 3.8 (METs for Calisthenics) * workout time
 
-        float totalTime = (float)(secs/3600);
+        float calories = ((Float.parseFloat(weight))/2.2046f) * 3.8f * ((float)(secs)/3600f);
 
-        calories = (float) ((float)(Float.parseFloat(weight)/2.2046) * 3.8 * totalTime);
+        DecimalFormat dec = new DecimalFormat("0.00");
 
         // Display the total amount of calories burned to the user
-        totalCalories.setText("You burned a total of "+calories+" calories");
+        totalCalories.setText("You burned a total of "+dec.format(calories)+" calories");
 
         // BMI Formula: BMI = [weight (lb) / height (in) / height (in)] x 703
 
@@ -80,7 +80,7 @@ public class Results extends AppCompatActivity {
         float BMIValue = ((Float.parseFloat(weight))/(Float.parseFloat(height))/(Float.parseFloat(height)))*703;
 
         // Display the calculated BMI to the user
-        BMI.setText("Your BMI is "+String.valueOf(BMIValue));
+        BMI.setText("Your BMI is "+dec.format(BMIValue));
 
         // When the Home button is clicked, go back to the Main Activity view
         homeBtn.setOnClickListener(new View.OnClickListener() {
