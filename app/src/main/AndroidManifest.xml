@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- In AndroidManifest.xml, the app launcher icon is set, INTERNET permissions is set to allow access to the Internet,
+and the screen orientation of every activity is set to portrait -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fitnessapp">
 
